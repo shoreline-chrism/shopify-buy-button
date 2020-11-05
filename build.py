@@ -23,7 +23,7 @@ def generate_output(data):
     template.stream(data).dump('public/index.html')
 
 def load_data():
-    url = f'https://{os.environ["SHOPIFY_PRIVATE_APP_API_KEY"]}:{os.environ["SHOPIFY_PRIVATE_APP_PASSWORD"]}@{os.environ["SHOPIFY_SHOP_DOMAIN"]}/admin/api/2020-10/graphql.json'
+    url = f'https://{os.environ["SHOPIFY_SHOP_DOMAIN"]}/admin/api/2020-10/graphql.json'
     json = { 'query' : '''
 {
   shop {
@@ -48,7 +48,7 @@ def load_data():
 }
     ''' }
     #headers = {'X-Shopify-Storefront-Access-Token': os.environ['SHOPIFY_STOREFRONT_TOKEN']}
-    headers = {}
+    headers = {'Authorization': os.environ['SHOPIFY_API_AUTH']}
 
     response = requests.post(url = url, json = json, headers = headers)
     return response.json()['data']

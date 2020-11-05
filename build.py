@@ -48,6 +48,7 @@ def load_data():
 }
     ''' }
     #headers = {'X-Shopify-Storefront-Access-Token': os.environ['SHOPIFY_STOREFRONT_TOKEN']}
+    headers = {}
 
     response = requests.post(url = url, json = json, headers = headers)
     return response.json()['data']

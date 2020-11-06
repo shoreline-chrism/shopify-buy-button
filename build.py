@@ -58,7 +58,7 @@ def transform_products(data):
     Transform encoded ID back to integer to use it in https://github.com/Shopify/buy-button-js
     '''
     def transform_id(product):
-        product_id = product['node']['id']) 
+        product_id = product['node']['id'] 
         missing_padding = len(product_id) % 4
         if missing_padding == 3:
             product_id = product_id[0:-3]
@@ -66,7 +66,7 @@ def transform_products(data):
             print ("Missing padding : " + str(missing_padding))
             product_id += '=' * (4 - missing_padding)        
         # decode base64 encoded string
-        id = str(base64.b64decode(product_id)
+        id = str(base64.b64decode(product_id))
         # ID in following format will get returned gid://shopify/Product/10072080975
         # use regex to extract the number
         id = int(re.findall('\d+', id)[0])

@@ -128,7 +128,7 @@
     ui.createComponent('product', {
       id: [{{product['node']['id']}}],
       node: document.getElementById('product-component-{{product['node']['id']}}'),
-      moneyFormat: '%7B%7Bamount_with_comma_separator%7D%7D%20K%C4%8D',
+      moneyFormat: '%24%7B%7Bamount%7D%7D',
       options: options
     });
     {% endfor %}

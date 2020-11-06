@@ -8,3 +8,10 @@
 [build]
   publish = "public"
   command = "python build.py"
+  
+[template.environment]
+  SHOPIFY_SHOP_DOMAIN = "Shopify Shop Domain ex: myshop.shopify.com"
+  SHOPIFY_PRIVATE_APP_API_KEY = "Shopify Private App API Key"
+  SHOPIFY_PRIVATE_APP_PASSWORD = "Shopify Private APP Password"
+  SHOPIFY_STOREFRONT_TOKEN = "Storefront token from Shopify App"
+  AFFILIATE_NAME = "Affiliate Name"

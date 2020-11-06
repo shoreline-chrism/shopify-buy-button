@@ -2,7 +2,13 @@
 
 Static website presenting products defined on Shopify. It uses Shopify's GraphQL API to get a list of products and generates website where you can buy products using Shopify.
 
-## Installation
+## Deploy on Netlify
+
+Deploy this on Netlify by configuring some variables found in your Shopify Private App
+
+[![Launch on Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/shoreline-chrism/shopify-buy-button)
+
+## Development
 
 Setup your python environment.
 
@@ -10,7 +16,7 @@ Setup your python environment.
 pipenv install
 ```
 
-## Build
+### Build
 
 ```sh
 pipenv run python build.py

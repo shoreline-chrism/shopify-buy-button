@@ -119,20 +119,20 @@
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
       domain: '{{SHOPIFY_SHOP_DOMAIN}}',
-      storefrontAccessToken: '{{SHOPIFY_STOREFRONT_TOKEN}}',
-      appId: '6',
+      storefrontAccessToken: '{{SHOPIFY_STOREFRONT_TOKEN}}'
     });
 
-    ShopifyBuy.UI.init(client).then(function (ui) {
-      {% for product in shop['products']['edges'] %}
-      ui.createComponent('product', {
-        id: [{{product['node']['id']}}],
-        node: document.getElementById('product-component-{{product['node']['id']}}'),
-        moneyFormat: '%7B%7Bamount_with_comma_separator%7D%7D%20K%C4%8D',
-        options: options
-      });
-      {% endfor %}
+    var ui = ShopifyBuy.UI.init(client);
+
+    {% for product in shop['products']['edges'] %}
+    ui.createComponent('product', {
+      id: [{{product['node']['id']}}],
+      node: document.getElementById('product-component-{{product['node']['id']}}'),
+      moneyFormat: '%7B%7Bamount_with_comma_separator%7D%7D%20K%C4%8D',
+      options: options
     });
+    {% endfor %}
+
   }
 })();
 </script>

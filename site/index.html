@@ -97,7 +97,7 @@
   }
 };
 
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/1.0.0/buybutton.js';
   if (window.ShopifyBuy) {
     if (window.ShopifyBuy.UI) {
       ShopifyBuyInit();
@@ -118,7 +118,7 @@
 
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
-      domain: '{{SHOPIFY_SHOP_DOMAIN}}.myshopify.com',
+      domain: '{{SHOPIFY_SHOP_DOMAIN}}',
       storefrontAccessToken: '{{SHOPIFY_STOREFRONT_TOKEN}}',
       appId: '6',
     });

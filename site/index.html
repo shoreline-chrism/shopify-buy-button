@@ -123,7 +123,7 @@
       appId: '6',
     });
 
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
+    ShopifyBuy.UI.init(client).then(function (ui) {
       {% for product in shop['products']['edges'] %}
       ui.createComponent('product', {
         id: [{{product['node']['id']}}],

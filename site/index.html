@@ -119,8 +119,7 @@
   function ShopifyBuyInit() {
     var client = ShopifyBuy.buildClient({
       domain: '{{SHOPIFY_SHOP_DOMAIN}}',
-      storefrontAccessToken: '{{SHOPIFY_STOREFRONT_TOKEN}}',
-      appId: '6',
+      storefrontAccessToken: '{{SHOPIFY_STOREFRONT_TOKEN}}'
     });
 
     ShopifyBuy.UI.init(client).then(function (ui) {
